@@ -70,3 +70,18 @@ yesBtn.addEventListener("click", () => {
 
     finalText.style.display = "block";
 });
+// NO is clicked
+noBtn.addEventListener("click", () => {
+
+    title.textContent = "You weren't supposed to click that"
+    
+    catImg.src = "momonga-chii-kawa.gif";
+
+    document.querySelector(".letter-window").classList.add("final");
+
+    buttons.style.display = "none";
+
+    finalText.style.display = "block";
+})
+   
+
