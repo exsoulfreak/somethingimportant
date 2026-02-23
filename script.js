@@ -8,6 +8,7 @@ const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
+const finalText2 = document.getElementById("final-text-2");
 
 // Click Envelope
 
@@ -77,11 +78,11 @@ noBtn.addEventListener("click", () => {
     
     catImg.src = "momonga-chii-kawa.gif";
 
-    document.querySelector(".letter-window").classList.add("final");
+    document.querySelector(".letter-window").classList.add("final-text-2");
 
     buttons.style.display = "none";
-
-    finalText.style.display = "block";
+    
+    // Change This Line:
+    
+    finalText2.style.display = "block";
 });
-   
-
