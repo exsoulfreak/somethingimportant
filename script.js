@@ -58,18 +58,40 @@ noBtn.addEventListener("mouseover", () => {
 //     }
 // });
 
-// YES is clicked
+// Variable to track the "Are you sure" steps
+let yesStep = 0;
+const messages = [
+    "Are you sure? 🥺",
+    "Are you 100% sure? 🧐",
+    "Is that your Final answer? 💖"
+];
 
+const gifs = [
+    "chiikawa-hmm.gif",     // Matches "Are you sure? 🥺"
+    "jokebear-bear.gif",    // Matches "Are you 100% sure? 🧐"
+    "hachiware-bouncing-hachiware-jumping.webp"   // Matches "Is that your final answer? 💖" 
+];
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
+    if (yesStep < messages.length) {
+        // Change the title to the next question
+        title.textContent = messages[yesStep];
+        
+        // Pick the GIF from our list based on the current step
+        catImg.src = gifs[yesStep]; 
 
-    catImg.src = "usagi-chiikawa.gif";
+        yesStep++;
+    } else {
+        // THE FINAL YIPPEE MOMENT
+        title.textContent = "Yippee! 🎉💖";
+        catImg.src = "love.gif"; 
 
-    document.querySelector(".letter-window").classList.add("final");
+        document.querySelector(".letter-window").classList.add("final");
 
-    buttons.style.display = "none";
-
-    finalText.style.display = "block";
+        buttons.style.display = "none";
+        finalText.style.display = "block";
+        
+        finalText.textContent = "I love you! See you then! 🥰";
+    }
 });
 // NO is clicked
 noBtn.addEventListener("click", () => {
